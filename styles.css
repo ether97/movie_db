@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("2.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#result {
+  max-width: min-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  /* -webkit-backdrop-filter: blur(5px); */
+}
+
+p {
+  text-align: justify;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.north-div {
+  height: 350px;
+  display: flex;
+  padding: 20px 20px 10px 20px;
+}
+
+.north-data {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 10px;
+  padding: 0px 20px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.genre-container {
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+}
+
+.genre {
+  height: 100%;
+  padding: 10px;
+  border: solid 1px black;
+}
+
+.south-div {
+  padding: 10px 20px 20px 20px;
+  gap: 20px;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+.plot .cast {
+  display: flex;
+}
+
+img {
+  border-radius: 10px;
+}
+
+.genre-container {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.genre-container div {
+  padding: 10px;
+  border: solid 1px black;
+  background-color: transparent;
+  border-radius: 5px;
+}
+
+.rated {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#poster {
+  height: 100%;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 580px) {
+  .north-div {
+    height: 60%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px 20px 20px;
+  }
+  #poster {
+    margin-bottom: 20px;
+  }
+}

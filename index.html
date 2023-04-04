@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="result"></div>
+  <script>
+    let result = document.getElementById('result')
+    let fetchMovie = () => {
+      let key = 'f9d50b7';
+      let url = `http://www.omdbapi.com/?t=inception&apikey=${key}`
+      fetch(url).then((res) => res.json()).then((data) => {
+        console.log(data)
+        if (data) {
+          result.innerHTML = `
+                <div class="north-div">
+                    <img src=${data.Poster} id="poster"/>
+                    <div class="north-data">
+                        <h1>${data.Title}</h1>
+                        <div class="rating">
+                            <img src="star.png" style="scale: 0.6"/>
+                            <h3>${data.imdbRating}/10</h3>    
+                        </div>
+                        <div class="rated">
+                            <p id='rated'>${data.Rated}</p> <p id='rated'>&nbsp;&#x2022;&nbsp;</p> <p id='rated'> ${data.Year} </p><p id='rated'>&nbsp;&#x2022;&nbsp;</p> <p id='rated'> ${data.Runtime}</p></div>
+                        <div class="genre-container">
+                            <div>${data.Genre.split(',').join("</div><div>")}</div>
+                        </div>
+                    </div>    
+                </div>
+                <div class="south-div">
+                    <div class="plot">
+                        <h2>Plot:</h2>
+                        <p id='summary'>${data.Plot}</p>
+
+                    </div>
+                    <div class="cast">
+                        <h2>Cast:</h2>
+                        <p id='summary'>${data.Actors}</p>    
+                    </div>
+                </div>
+            `
+        }
+      })
+    }
+    fetchMovie();
+  </script>
+</body>
+
+</html>
